@@ -62,4 +62,8 @@ button {
   width: 340px;
   height: 284px;
   object-fit: cover;
+  transition: scale 250ms;
+}
+.image:hover {
+  scale: 1.01;
 }
