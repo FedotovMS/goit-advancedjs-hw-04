@@ -23,3 +23,43 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.search-form {
+  display: flex;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  padding: 16px;
+  opacity: 95%;
+}
+
+.search-form input {
+  font-size: 24px;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid rgb(95, 101, 224);
+  border-radius: 8px;
+}
+
+button {
+  background-color: rgb(95, 101, 224);
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.image {
+  width: 340px;
+  height: 284px;
+  object-fit: cover;
+}
