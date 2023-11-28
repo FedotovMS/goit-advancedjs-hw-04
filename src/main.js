@@ -99,3 +99,28 @@ async function renderGallery() {
 }
 
 form.addEventListener('submit', onSubmit);
+
+let debounceTimer;
+
+window.addEventListener('scroll', async () => {
+  clearTimeout(debounceTimer);
+
+  debounceTimer = setTimeout(async () => {
+    const distanceToBottom =
+      document.documentElement.offsetHeight -
+      (window.scrollY + window.innerHeight);
+
+    const threshold = 10;
+
+    if (distanceToBottom < threshold) {
+      const lastPage = page;
+      await renderGallery();
+
+      if (lastPage === page) {
+        Messages.warning('No more images');
+
+        window.removeEventListener('scroll');
+      }
+    }
+  }, 200);
+});

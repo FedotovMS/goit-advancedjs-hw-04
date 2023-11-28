@@ -8,6 +8,9 @@ export async function fetchImages(searchQuery, page) {
 
   const options = new URLSearchParams({
     key: API_KEY,
+    image_type: 'photo',
+    orientation: 'horizontal',
+    safesearch: 'true',
     q: searchQuery,
     page,
     per_page,
