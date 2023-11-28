@@ -67,7 +67,9 @@ async function renderGallery() {
   }
 
   if (page > totalPages) {
-    Messages.warning('No more images');
+    Messages.warning(
+      'We are sorry, but you have reached the end of search results'
+    );
     return;
   }
 
@@ -117,10 +119,12 @@ window.addEventListener('scroll', async () => {
       await renderGallery();
 
       if (lastPage === page) {
-        Messages.warning('No more images');
+        Messages.warning(
+          'We are sorry, but you have reached the end of search results'
+        );
 
         window.removeEventListener('scroll');
       }
     }
-  }, 200);
+  }, 100);
 });
